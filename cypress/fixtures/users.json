@@ -1,0 +1,38 @@
+{
+  "emailValido": "customer@practicesoftwaretesting.com",
+  "passwordValido": "welcome01",
+  "passwordIncorrecto": "claveErronea123",
+  "productoBusqueda": "Pliers",
+  "contacto": {
+    "nombre": "Jose",
+    "apellido": "Baron",
+    "email": "customer@practicesoftwaretesting.com",
+    "asunto": "customer-service",
+    "mensaje": "Este es un mensaje de prueba suficientemente largo para superar el minimo requerido por el formulario de contacto."
+  },
+  "direccion": {
+    "calle": "Avenida Principal 123",
+    "ciudad": "Cartagena",
+    "estado": "Bolivar",
+    "pais": "Colombia",
+    "codigoPostal": "130001"
+  },
+  "pago": {
+    "metodo": "Bank Transfer",
+    "nombreTitular": "Jose Baron",
+    "numeroCuenta": "9876543210"
+  },
+  "api": {
+    "urlProductos": "https://api-with-bugs.practicesoftwaretesting.com/products",
+    "urlLogin": "https://api-with-bugs.practicesoftwaretesting.com/users/login"
+  },
+  "errores": {
+    "loginInvalido": "Invalid email or password"
+  },
+  "mensajes": {
+    "contactoExitoso": "Thanks for your message! We will contact you shortly.",
+    "compraExitosa": "Payment was successful",
+    "ordenConfirmada": "Thanks for your order! Your invoice number is",
+    "carritoVacio": "The cart is empty. Nothing to display."
+  }
+}
