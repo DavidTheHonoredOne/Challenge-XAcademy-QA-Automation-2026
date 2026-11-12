@@ -1,24 +1,21 @@
-// Comando para iniciar sesion tanto en login como en checkout
-Cypress.Commands.add('iniciarSesion', (email, password) => {
-  cy.get('[data-test="email"]').clear().type(email);
-  cy.get('[data-test="password"]').clear().type(password);
-  cy.get('[data-test="login-submit"]').click();
-});
+Cypress.Commands.add('login', (email, password)=>{
+    cy.get('[data-test="email"]').clear().type(email)
+    cy.get('[data-test="password"]').clear().type(password)
+    cy.get('[data-test="login-submit"]').click()
+})
 
-// Comando para seleccionar el primer producto y agregarlo al carrito
-Cypress.Commands.add('agregarProductoAlCarrito', () => {
-  cy.get('[data-test="product-name"]').first().click();
-  cy.wait(200);
-  cy.get('[data-test="add-to-cart"]').click();
-  cy.wait(200);
-});
+Cypress.Commands.add('agregarProducto', ()=>{
+    cy.get('[data-test="product-name"]').first().click()
+    cy.wait(20)
+    cy.get('[data-test="add-to-cart"]').click()
+    cy.wait(20)
+})
 
-// Comando para completar y enviar el formulario de contacto
-Cypress.Commands.add('completarContacto', (datosContacto) => {
-  cy.get('[data-test="first-name"]').clear().type(datosContacto.nombre);
-  cy.get('[data-test="last-name"]').clear().type(datosContacto.apellido);
-  cy.get('[data-test="email"]').clear().type(datosContacto.email);
-  cy.get('[data-test="subject"]').select(datosContacto.asunto);
-  cy.get('[data-test="message"]').clear().type(datosContacto.mensaje);
-  cy.get('[data-test="contact-submit"]').click();
-});
+Cypress.Commands.add('llenarContacto', (contacto)=>{
+    cy.get('[data-test="first-name"]').type(contacto.nombre)
+    cy.get('[data-test="last-name"]').type(contacto.apellido)
+    cy.get('[data-test="email"]').type(contacto.email)
+    cy.get('[data-test="subject"]').select(contacto.asunto)
+    cy.get('[data-test="message"]').type(contacto.mensaje)
+    cy.get('[data-test="contact-submit"]').click()
+})

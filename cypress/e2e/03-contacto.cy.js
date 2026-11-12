@@ -1,24 +1,27 @@
-describe('Formulario de contacto', () => {
-  beforeEach(() => {
-    cy.visit('/');
-    cy.wait(200);
-    cy.get('[data-test="nav-contact"]').click();
-    cy.wait(200);
-  });
+describe('Contacto', ()=>{
 
-  it('Debe enviar un mensaje satisfactoriamente con datos validos', () => {
-    cy.fixture('users').then((datos) => {
-      // 1. Verificar presencia en el formulario de contacto
-      cy.url().should('include', '/contact');
+    beforeEach(()=>{
+        cy.visit('https://with-bugs.practicesoftwaretesting.com/')
+        cy.wait(20)
+        cy.get('[data-test="nav-contact"]').click()
+        cy.wait(20)
+    })
 
-      // 2 y 3. Completar campos y enviar formulario mediante custom command
-      cy.completarContacto(datos.contacto);
-      cy.wait(500);
+    it('Enviar formulario de contacto', ()=>{
+        cy.fixture('users').then((datos)=>{
+            cy.llenarContacto(datos.contacto)
+            cy.wait(20)
 
-      // 4. Verificar la confirmacion de envio exitoso
-      cy.get('.alert-success')
-        .should('be.visible')
-        .and('contain.text', datos.mensajes.contactoExitoso);
-    });
-  });
-});
+            cy.get('.alert-success').should('be.visible').and('contain', datos.mensajes.contacto)
+        })
+    })
+
+    it('Bug TC-12 texto Contakt y boton Home redirige a contacto', ()=>{
+        cy.get('[data-test="nav-contact"]').should('contain', 'Contakt')
+        // cy.get('[data-test="nav-contact"]').should('have.text', 'Contact')
+
+        cy.get('[data-test="nav-home"]').click()
+        cy.wait(20)
+        cy.url().should('include', '/contact')
+    })
+})
