@@ -1,4 +1,4 @@
-describe('Login', ()=>{
+describe('Login',()=>{
 
     beforeEach(()=>{
         cy.visit('https://with-bugs.practicesoftwaretesting.com/')
@@ -7,7 +7,7 @@ describe('Login', ()=>{
         cy.wait(20)
     })
 
-    it('Login con pass incorrecta', ()=>{
+    it('Login con pass incorrecta',()=>{
         cy.fixture('users').then((datos)=>{
             cy.login(datos.email, datos.passIncorrecta)
             cy.wait(20)

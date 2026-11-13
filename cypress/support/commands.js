@@ -19,3 +19,10 @@ Cypress.Commands.add('llenarContacto', (contacto)=>{
     cy.get('[data-test="message"]').type(contacto.mensaje)
     cy.get('[data-test="contact-submit"]').click()
 })
+
+Cypress.Commands.add('apiLogin', ()=>{
+    return cy.request('POST', 'https://api-with-bugs.practicesoftwaretesting.com/users/login', {
+        email: 'customer@practicesoftwaretesting.com',
+        password: 'welcome01'
+    }).its('body.access_token')
+})

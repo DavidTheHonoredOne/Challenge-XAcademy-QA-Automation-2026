@@ -16,8 +16,9 @@ Entrega del trabajo final de testing sobre el sitio Toolshop (`with-bugs`).
 
 - `01-compra.cy.js`: Compra exitosa de un producto.
 - `02-registro.cy.js`: Validaciones del formulario de registro vacio.
-- `03-contacto.cy.js`: Envio del formulario de contacto y validacion de bug TC-12.
+- `03-contacto.cy.js`: Envio del formulario de contacto.
 - `04-login.cy.js`: Inicio de sesion con datos incorrectos.
 - `05-busqueda.cy.js`: Busqueda de productos en el catalogo.
 - `06-carrito.cy.js`: Eliminar un producto del carrito.
 - `07-api.cy.js`: Prueba de API de productos y login.
+- `08-bug-tc12.cy.js`: Prueba automatizada del bug TC-12 en la barra de navegacion.

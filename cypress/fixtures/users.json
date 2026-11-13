@@ -4,22 +4,22 @@
     "passIncorrecta": "DoritoGang999999",
     "producto": "Pliers",
     "contacto": {
-        "nombre": "Carlos",
-        "apellido": "Gomez",
-        "email": "carlos.prueba@testmail.com",
+        "nombre": "Laura",
+        "apellido": "Vidal",
+        "email": "laura.vidal@fakemail.net",
         "asunto": "customer-service",
-        "mensaje": "HHBKJBHJBJHBVUYGFYUIUIJUFVGIUHIUHIGVYFVGUTCFVTYUFYVJUGYUIYYUHFHUIHUJBGJKUG"
+        "mensaje": "IASFJFAIOFJAIFSJAFIWAJFSFANSKFBWUAIFSBFWJAKFWBAUISKFWJAKSNFJWJAFNWJAFNJSFNJAS"
     },
     "direccion": {
-        "calle": "Av Sincelejo Viva 999",
-        "ciudad": "Night City",
+        "calle": "Calle Falsa 742",
+        "ciudad": "Bogota",
         "estado": "Cundinamarca",
         "pais": "Colombia",
         "codigoPostal": "110111"
     },
     "pago": {
         "metodo": "Bank Transfer",
-        "titular": "Carlos Vincent",
+        "titular": "Laura Vidal",
         "cuenta": "5555512345"
     },
     "errores": {

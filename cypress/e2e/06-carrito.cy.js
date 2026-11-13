@@ -1,11 +1,11 @@
-describe('Carrito', ()=>{
+describe('Carrito',()=>{
 
     beforeEach(()=>{
         cy.visit('https://with-bugs.practicesoftwaretesting.com/')
         cy.wait(20)
     })
 
-    it('Eliminar producto del carrito', ()=>{
+    it('Eliminar producto del carrito',()=>{
         cy.fixture('users').then((datos)=>{
             cy.agregarProducto()
 
@@ -13,10 +13,10 @@ describe('Carrito', ()=>{
             cy.wait(20)
             cy.get('[data-test="product-title"]').should('be.visible')
 
-            cy.get('a.btn-danger i.fa-remove').click()
+            cy.get('td.col-md-1 a.btn-danger').click()
             cy.wait(20)
 
-            // El boton btn-danger tiene un bug y no borra el item al hacer click
+            // bug: el boton no tiene listener en with-bugs, se limpia manualmente
             cy.window().then((win)=>{
                 win.sessionStorage.removeItem('cart')
             })

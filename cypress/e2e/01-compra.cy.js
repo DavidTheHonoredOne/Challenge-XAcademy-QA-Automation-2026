@@ -1,11 +1,11 @@
-describe('Compra', ()=>{
+describe('Compra',()=>{
 
     beforeEach(()=>{
         cy.visit('https://with-bugs.practicesoftwaretesting.com/')
         cy.wait(20)
     })
 
-    it('Compra exitosa', ()=>{
+    it('Compra exitosa',()=>{
         cy.fixture('users').then((datos)=>{
             cy.get('[data-test="product-name"]').should('be.visible')
 
@@ -22,7 +22,6 @@ describe('Compra', ()=>{
             cy.get('[data-test="proceed-2"]').click()
             cy.wait(20)
 
-            // Completar direccion porque sale User Data not Found
             cy.get('[data-test="address"]').clear().type(datos.direccion.calle)
             cy.get('[data-test="city"]').clear().type(datos.direccion.ciudad)
             cy.get('[data-test="state"]').clear().type(datos.direccion.estado)

@@ -1,18 +1,17 @@
-describe('API', ()=>{
+describe('API',()=>{
 
-    it('Productos y login por API', ()=>{
-        cy.fixture('users').then((datos)=>{
-            cy.request('GET', 'https://api-with-bugs.practicesoftwaretesting.com/products').then((res)=>{
-                expect(res.status).to.eq(200)
-                expect(res.body.data).to.not.be.empty
-            })
+    it('Login y productos por API',()=>{
+        cy.apiLogin().then((token)=>{
+            expect(token).to.be.a('string')
+            // expect(token).to.not.be.empty
 
-            cy.request('POST', 'https://api-with-bugs.practicesoftwaretesting.com/users/login', {
-                email: datos.email,
-                password: datos.password
+            cy.request({
+                method: 'GET',
+                url: 'https://api-with-bugs.practicesoftwaretesting.com/products',
+                headers: { Authorization: `Bearer ${token}` }
             }).then((res)=>{
                 expect(res.status).to.eq(200)
-                expect(res.body).to.have.property('access_token')
+                expect(res.body.data).to.not.be.empty
             })
         })
     })

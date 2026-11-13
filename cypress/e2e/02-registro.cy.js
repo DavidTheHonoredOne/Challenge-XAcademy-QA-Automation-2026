@@ -1,4 +1,4 @@
-describe('Registro', ()=>{
+describe('Registro',()=>{
 
     beforeEach(()=>{
         cy.visit('https://with-bugs.practicesoftwaretesting.com/')
@@ -9,7 +9,7 @@ describe('Registro', ()=>{
         cy.wait(20)
     })
 
-    it('Registro con campos vacios', ()=>{
+    it('Registro con campos vacios',()=>{
         cy.get('[data-test="register-submit"]').click()
         cy.wait(20)
 
